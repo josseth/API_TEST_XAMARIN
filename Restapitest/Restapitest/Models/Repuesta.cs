@@ -7,6 +7,7 @@ namespace Restapitest.Models
 {
     public class Repuesta
     {
+        //listado
         public List<Alumno> LISTAD0 { get; set; }
     }
 }
