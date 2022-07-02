@@ -2,23 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restapitest.MainPage">
-
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
-
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Mantenimiento de Alumnos" HorizontalTextAlignment="Center" FontSize="Title" Padding="30,10,30,10"/>
+            <Entry x:Name="txtnombre" TextColor="Black" Margin="10" Placeholder="INGRESE NOMBRE"/>
+            <Entry x:Name="txtape" TextColor="Black" Margin="10" Placeholder="INGRESE APELLIDO"/>
+            <Entry x:Name="txtedad" TextColor="Black" Margin="10" Placeholder="INGRESE EDAD" Keyboard="Numeric" MaxLength="2"/>
+            <Entry x:Name="txtdireccion" TextColor="Black" Margin="10" Placeholder="INGRESE DIRECCION"/>
+            <Picker x:Name="txtgenero" Title="Selecciona tu genero" TitleColor="Black" Margin="10" >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>F</x:String>
+                        <x:String>M</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="idCarr" Title="Selecciona ID Carrera" 
+                    TitleColor="Black" TextColor="Black" Margin="10" ItemsSource="{Binding idcarrr}">
+            </Picker>
+            <Button x:Name="btncrear" Text="CREAR ALUMNO" Margin="10" Clicked="btncrear_Clicked"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

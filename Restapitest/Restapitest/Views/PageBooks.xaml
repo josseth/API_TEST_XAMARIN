@@ -5,13 +5,16 @@
     <ContentPage.Content>
         <StackLayout>
             <Button x:Name="btnconsume" Text="Consumir API" Clicked="btnconsume_Clicked"></Button>
+            <Button x:Name="btnCrear" Text="Crear Alumno" Clicked="btnCrear_Clicked"></Button>
+            <Label Grid.Row="0" Margin="10" Text="JSON Parsing" FontSize="25" />
+            <ScrollView>
             <Grid>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Margin="10" Text="JSON Parsing" FontSize="25" />
+                    
                     <ListView x:Name="listaAlumnos" Grid.Row="1"  HorizontalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="listaAlumnos_ItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -34,9 +37,10 @@
 
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>
+                        </ListView>
                 </Grid>
-            </Grid>
+                </Grid>
+            </ScrollView>
         </StackLayout>
         
     </ContentPage.Content>

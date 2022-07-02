@@ -27,7 +27,7 @@ namespace Restapitest.Views
                 //listaAlumnos.ItemsSource = listbook;
 
                 List<Models.Alumno> listaAlumno = new List<Models.Alumno>();
-                listaAlumno = await Controllers.BookController.getAlumnos();
+                listaAlumno = await Controllers.Alumnos_Controllers.getAlumnos();
                 listaAlumnos.ItemsSource = listaAlumno;
             }
         }
@@ -35,6 +35,11 @@ namespace Restapitest.Views
         private void listaAlumnos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 
+        }
+
+        private async void btnCrear_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }
